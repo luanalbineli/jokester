@@ -10,11 +10,11 @@ public class JokeProvider {
             "What is the difference between a snowman and a snowwoman?\n" +
                     "-\n" +
                     "Snowballs.",
-            " “My wife suffers from a drinking problem.”\n" +
+            "My wife suffers from a drinking problem.\n" +
                     "-\n" +
-                    "“Oh is she an alcoholic?”\n" +
+                    "Oh is she an alcoholic?\n" +
                     "-\n" +
-                    "“No, I am, but she’s the one who suffers.”",
+                    "No, I am, but she’s the one who suffers.",
             "I’m selling my talking parrot. Why? Because yesterday, the bastard tried to sell me.",
             "I can’t believe I forgot to go to the gym today. That’s 7 years in a row now.",
             "The inventor of AutoCorrect is a stupid mass hole. He can fake right off.",

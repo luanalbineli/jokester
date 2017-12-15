@@ -12,22 +12,14 @@ ext {
             eventBus                : '3.0.0',
             retrofit                : '2.3.0',
             okHttpLoggingInterceptor: '3.6.0',
-            androidArchitecture     : '1.0.0-alpha8',
             junit                   : '4.12',
             mockito                 : '2.8.47',
             espresso                : '2.2.2',
             testRunner              : '0.0.4',
-            kotlin                  : '1.2.0',
             hamcrest                : '1.3',
             daggerMock              : '0.8.1',
-            fresco                  : '1.5.0',
-            materialRatingBar       : '1.1.1',
-            likeButton              : '0.2.3',
-            bottomBar               : '2.0.2',
-            readMoreTextView        : '2.0.1',
             leakCanary              : '1.5.4',
-            favoriteButton          : '0.1.4',
-            floatingSearchView      : '2.1.1'
+            playServices            : '11.6.2'
     ]
 
     supportV13 = "com.android.support:support-v13:$versions.support"
@@ -55,19 +47,10 @@ ext {
             "com.squareup.okhttp3:logging-interceptor:$versions.okHttpLoggingInterceptor"
     ]
 
-    architectureComponents = [
-            "android.arch.lifecycle:runtime:$versions.androidArchitecture",
-            "android.arch.lifecycle:extensions:$versions.androidArchitecture"
-    ]
-
-    architectureComponentCompiler = "android.arch.lifecycle:compiler:$versions.androidArchitecture"
-
     constraintLayout = "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
 
     dagger = "com.google.dagger:dagger:$versions.dagger"
     daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
-
-    kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
 
     materialDialog = "com.afollestad.material-dialogs:core:$versions.materialDialog"
 
@@ -75,28 +58,10 @@ ext {
 
     eventBus = "org.greenrobot:eventbus:$versions.eventBus"
 
-    fresco = "com.facebook.fresco:fresco:$versions.fresco"
-
     jUnitDep = "junit:junit:$versions.junit"
 
     mockitoCore = "org.mockito:mockito-core:$versions.mockito"
     mockitoAndroid = "org.mockito:mockito-android:$versions.mockito"
-
-    materialRatingBar = "me.zhanghai.android.materialratingbar:library:$versions.materialRatingBar"
-
-    likeButton = "com.github.jd-alexander:LikeButton:$versions.likeButton"
-
-    favoriteButton = "com.github.ivbaranov:materialfavoritebutton:$versions.favoriteButton"
-
-    bottomBar = "com.ashokvarma.android:bottom-navigation-bar:$versions.bottomBar"
-
-    floatingSearchView = "com.github.arimorty:floatingsearchview:$versions.floatingSearchView"
-
-    // Room
-    /*compile "android.arch.persistence.room:runtime:$rootProject.room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.room_version"*/
-
-    readMoreTextView = "com.borjabravo:readmoretextview:$versions.readMoreTextView"
 
     // LeakCanary
     leakCanaryDebug = "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary"
@@ -113,7 +78,9 @@ ext {
 
     daggerMock = "com.github.fabioCollini:DaggerMock:$versions.daggerMock"
 
-    defaultLibs = rxJava + retrofit + kotlin + constraintLayout + gson + timber
+    playServicesAds = "com.google.android.gms:play-services-ads:$versions.playServices"
+
+    defaultLibs = rxJava + retrofit + constraintLayout + gson + timber
 
     unitTestLibs = [jUnitDep, mockitoCore]
     androidTestLibs = espresso + [mockitoAndroid, hamcrestCore, daggerMock]
