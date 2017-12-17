@@ -6,7 +6,7 @@ apply from: '../configuration.gradle'
 android {
     compileSdkVersion configuration.compileSdkVersion
     buildToolsVersion configuration.buildToolsVersion
-    flavorDimensions "versionCode"
+    flavorDimensions "market", "default"
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
@@ -23,18 +23,25 @@ android {
         }
     }
     productFlavors {
-        free { }
+        free {
+            flavorDimension "default"
+        }
         paid {
+            flavorDimension "market"
             applicationIdSuffix ".paid"
         }
     }
 }
 
 dependencies {
+    def commonDependencies = [supportV7, googleApiClient, googleHttpClient]
+
+    compile commonDependencies
+
+    // Only add the ADs dependency to the free version
+    freeCompile playServicesAds
+
     compile project(':javalibrary')
     compile project(':androidlibrary')
     compile project(path: ':backend', configuration: 'android-endpoints')
-
-    implementation supportV7
-    implementation playServicesAds
 }

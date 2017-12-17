@@ -16,8 +16,7 @@ import com.google.api.server.spi.config.ApiNamespace;
         version = "v1",
         namespace = @ApiNamespace(
                 ownerDomain = "backend.builditbigger.gradle.udacity.com",
-                ownerName = "backend.builditbigger.gradle.udacity.com",
-                packagePath = ""
+                ownerName = "backend.builditbigger.gradle.udacity.com"
         )
 )
 public class JokeProviderEndpoint {
