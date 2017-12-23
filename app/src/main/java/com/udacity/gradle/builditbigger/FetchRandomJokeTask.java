@@ -6,14 +6,14 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-//import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
+import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
 
 import java.io.IOException;
 
 
 public class FetchRandomJokeTask extends AsyncTask<Void, Void, String> {
     private final FetchRandomJokeTaskListener fetchRandomJokeTaskListener;
-    //private MyApi myApiService = null;
+    private JokeApi myApiService = null;
 
     FetchRandomJokeTask(FetchRandomJokeTaskListener fetchRandomJokeTaskListener) {
         this.fetchRandomJokeTaskListener = fetchRandomJokeTaskListener;
@@ -21,8 +21,8 @@ public class FetchRandomJokeTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... params) {
-       /* if (myApiService == null) {  // Only do this once
-            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
+        if (myApiService == null) {  // Only do this once
+            JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
@@ -39,8 +39,7 @@ public class FetchRandomJokeTask extends AsyncTask<Void, Void, String> {
             return myApiService.getRandomJoke().execute().getJoke();
         } catch (IOException e) {
             return e.getMessage();
-        }*/
-       return "JOKE";
+        }
     }
 
     @Override

@@ -6,7 +6,6 @@ apply from: '../configuration.gradle'
 android {
     compileSdkVersion configuration.compileSdkVersion
     buildToolsVersion configuration.buildToolsVersion
-    flavorDimensions "market", "default"
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
@@ -24,24 +23,38 @@ android {
     }
     productFlavors {
         free {
-            flavorDimension "default"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
         }
         paid {
-            flavorDimension "market"
             applicationIdSuffix ".paid"
+            versionNameSuffix "-paid"
         }
     }
 }
 
 dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
     def commonDependencies = [supportV7, googleApiClient, googleHttpClient]
 
     compile commonDependencies
+
+    androidTestCompile jUnit
+
+    androidTestCompile (supportTestRunner) {
+        exclude group: 'com.android.support'
+    }
+
+    androidTestCompile (supportTestRules) {
+        exclude group: 'com.android.support'
+    }
 
     // Only add the ADs dependency to the free version
     freeCompile playServicesAds
 
     compile project(':javalibrary')
     compile project(':androidlibrary')
-    compile project(path: ':backend', configuration: 'android-endpoints')
+    // https://discussions.udacity.com/t/cannot-resolve-symbol-myapi-fix/484903
+    //compile project(path: ':backend', configuration: 'android-endpoints')
 }

@@ -6,7 +6,8 @@ ext {
             mockito         : '2.8.47',
             playServices    : '11.6.2',
             googleApiClient : '1.23.0',
-            fancyButton     : '1.1.3'
+            fancyButton     : '1.1.3',
+            supportTest     : '0.5'
     ]
 
     supportV13 = "com.android.support:support-v13:$versions.support"
@@ -17,17 +18,18 @@ ext {
 
     constraintLayout = "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
 
-    jUnitDep = "junit:junit:$versions.junit"
+    jUnit = "junit:junit:$versions.junit"
+
+    supportTestRunner = "com.android.support.test:runner:$versions.supportTest"
+    supportTestRules = "com.android.support.test:rules:$versions.supportTest"
 
     mockitoCore = "org.mockito:mockito-core:$versions.mockito"
     mockitoAndroid = "org.mockito:mockito-android:$versions.mockito"
 
     playServicesAds = "com.google.android.gms:play-services-ads:$versions.playServices"
 
-    googleHttpClient = "com.google.http-client:google-http-client-android:$versions.googleApiCient"
-    googleApiClient = "com.google.api-client:google-api-client:$versions.googleApiCient"
+    googleHttpClient = "com.google.http-client:google-http-client-android:$versions.googleApiClient"
+    googleApiClient = "com.google.api-client:google-api-client:$versions.googleApiClient"
 
     fancyButton = "com.ekalips.android:fancyprogressbutton:$versions.fancyButton"
-
-    unitTestLibs = [jUnitDep]
 }
