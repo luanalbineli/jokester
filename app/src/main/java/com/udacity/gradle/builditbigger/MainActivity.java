@@ -6,20 +6,11 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements FetchRandomJokeTask.FetchRandomJokeTaskListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void tellJoke(View view) {
-        new FetchRandomJokeTask(this).execute();
-    }
-
-    @Override
-    public void onResult(String joke) {
-        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
     }
 }
