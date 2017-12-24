@@ -55,6 +55,11 @@ dependencies {
 
     compile project(':javalibrary')
     compile project(':androidlibrary')
-    // https://discussions.udacity.com/t/cannot-resolve-symbol-myapi-fix/484903
+    /*
+    * Guys, please, access this link: https://discussions.udacity.com/t/cannot-resolve-symbol-myapi-fix/484903
+    * I cannot uncomment the line below, or it will give me a DexException: Multiple dex files define ...
+    *
+    * Sorry, I forgot to commit the libs folder, my bad :(
+    * */
     //compile project(path: ':backend', configuration: 'android-endpoints')
 }
